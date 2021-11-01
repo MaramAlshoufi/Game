@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="Utf-8">
+        <title>ُTask1</title>
+        <style>
+            .img{height: 500px;
+                width: 100%;
+            }
+            .animation{
+                height: 70px;
+                width: 60px;
+                margin-top: -80px;
+                margin-left: 40px;
+                position: absolute;
+            }
+            .obs1{
+                height: 70px;
+                width: 130px;
+                margin-top: -100px;
+                margin-left: 350px;
+                position: absolute;
+            }
+            .obs2{
+                height: 110px;
+                width: 120px;
+                margin-top: -165px;
+                margin-left: 700px;
+                position: absolute;
+            }
+            .obs4{
+                height: 100px;
+                width: 120px;
+                margin-top: -110px;
+                margin-left: 1060px;
+                position: absolute;
+            }
+            button{
+                margin: 2px auto;
+                background-color: rgb(87 163 3);
+                height: 30px;
+                width: 60px;
+                border-radius: 10px;
+                border-color: rgb(87 163 3);
+                color: cornsilk;
+                margin-left: 50%;
+            }
+            button:hover{
+                cursor: pointer;
+            }
+            #left{
+                margin-left: 40%;
+            }
+            #right{
+                margin-left: 15%;
+            }
+        </style>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script> 
+            $(document).ready(function(){
+                var s=0;
+                $("#top").click(function(){
+                    $("#div").animate({top: '-=50px'});
+                    if (s==0) {$("#div").attr("src", "bn2.png"); s=1;}
+                    else {$("#div").attr("src", "bn1.png"); s=0}
+                });
+                $("#left").click(function(){
+                    $("#div").animate({left: '-=40px'});
+                    if (s==0) {$("#div").attr("src", "bn2.png"); s=1;}
+                    else {$("#div").attr("src", "bn1.png"); s=0}
+                });
+                $("#right").click(function(){
+                    $("#div").animate({left: '+=40px'});
+                    if (s==0) {$("#div").attr("src", "bn2.png"); s=1;}
+                    else {$("#div").attr("src", "bn1.png"); s=0}
+                });
+                $("#bottom").click(function(){
+                    $("#div").animate({top: '+=50px'});
+                    if (s==0) {$("#div").attr("src", "bn2.png"); s=1;}
+                    else {$("#div").attr("src", "bn1.png"); s=0}
+                });
+            });
+        </script> 
+        
+    </head>
+    <body>
+        <img class="img" src="bk1.jpg"><br>
+        <img class="animation" src="bn1.png" id="div"><br>
+        <img class="obs1" src="obs1.png">
+        <img class="obs2" src="obs2.png">
+        <img class="obs4" src="obs4.png"><br>
+        <button id="top">Top</button><br>
+        <button id="left">Left</button>
+        <button id="right">Right</button><br>
+        <button id="bottom">Bottom</button> 
+    </body>
+</html>
